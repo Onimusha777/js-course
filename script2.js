@@ -171,13 +171,17 @@ else {
 //     return power(val, pow);
 // }
 
-function power(val, pow) {
-    if (pow !== 1) {
-        return val * power(val, pow: pow - 1);
-    }
-    return val;
-}
+// function power(val, pow) {
+//     if (pow !== 1) {
+//         return val * power(val, pow: pow - 1);
+//     }
+//     return val;
+// }
 
-power(2, 6);
+// power(2, 6);
 
 //можете подсказать, почему переменная origin у меня постоянно undefinded? Уверен, что дело в этом и если бы origin стала равна 2-м на первом ходе функции - все бы решилось,
+
+
+//Сначала выкатил, потом внес пару правок, перезалив
+
