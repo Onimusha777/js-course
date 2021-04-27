@@ -1,0 +1,53 @@
+<script>
+    //Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни. Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+
+    var userAnswer;
+
+    function checkNumber() {
+        userAnswer = prompt('Введите число от 0 до 999');
+        var checkIsRunning = true;
+
+        while (checkIsRunning) { //пока идет проверка
+            if (userAnswer >= 0 && userAnswer <= 999) {
+                gameIsRunning = false;
+            } //закончить проверку
+
+            else {
+                alert('Incorrect'); //incorrect number
+                //repeat
+                userAnswer = prompt('Введите число от 0 до 999', 0);
+            }
+
+            return userAnswer;
+        }
+
+    }
+    checkNumber();
+    // var userAnswer = "123";
+
+    var ranks = userAnswer.split("");
+    console.log(ranks); //разложили на массив
+
+    function Answer(units, tens, hundreds) {
+        this.unit = units;
+        this.ten = tens;
+        this.hundred = hundreds;
+        // this.show = function () {
+        //     console.log('Сотни: ' + this.hundred + 'Десятки: ' + this.ten + 'Единицы: ' + this.unit);
+        // } почему-то не пишется лог, выношу из конструктора ниже. А почему так вышло?(
+    }
+
+    if (ranks.length == 3) {
+        var answer = new Answer(ranks[2], ranks[1], ranks[0]);
+        console.log('Сотни: ' + answer.hundred + ' Десятки: ' + answer.ten + ' Единицы: ' + answer.unit);
+    } else if (ranks.length == 2) {
+        var answer = new Answer(ranks[1], ranks[0]);
+        console.log(' Десятки: ' + answer.ten + ' Единицы: ' + answer.unit);
+    } else {
+        var answer = new Answer(ranks[0]);
+        console.log(' Единицы: ' + answer.unit);
+    }
+
+
+
+</script>
